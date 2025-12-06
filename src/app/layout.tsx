@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Lexend_Deca, Stack_Sans_Notch, M_PLUS_Rounded_1c, SUSE_Mono, Patrick_Hand_SC } from 'next/font/google'; 
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -59,6 +60,7 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
         </WelcomeLoader>
+        <Analytics />
       </body>
     </html>
   );
