@@ -8,13 +8,17 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-lexend: var(--font-lexend);
+  --font-stack: var(--font-stack);
+  --font-mplus: var(--font-mplus);
+  --font-suse: var(--font-suse);
+  --font-patrick: var(--font-patrick);
+ 
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #1B262C;
     --foreground: #ededed;
   }
 }
@@ -23,4 +27,17 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@utility mask-to-t {
+  mask : linear-gradient(to top, rgba(0,0,0,0) 0% , rgba(0,0,0,1 ) 100%)
+}
+html {
+  overflow-y: scroll; /* Ensures scrolling functionality */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+}
+
+html::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for WebKit browsers (Chrome, Safari, Edge) */
 }
