@@ -9,7 +9,7 @@ export default function Home() {
       <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]">
         <div className="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#C9EBFF,transparent)]"></div>
       </div>
-      <div className="mt-26 max-w-5xl px-6 py-4 pb-20 flex flex-col sm:ml-3 md:ml-32 lg:ml-46">
+      <div className="mt-24 max-w-5xl px-6 py-4 pb-20 flex flex-col sm:ml-3 md:ml-30 lg:ml-36">
         
         {/* Name - 0.4s delay */}
         <motion.h1 

@@ -18,7 +18,7 @@ export default function Contact() {
             GitHub
           </a>
           <a
-            href="mailto:hello@example.com"
+            href="mailto:haaziq@karou.me"
             className="font-lexend px-6 py-3 border border-[#98c1d9] text-[#98c1d9] rounded-lg hover:bg-[#98c1d9]/10 transition-colors"
           >
             Email

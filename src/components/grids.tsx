@@ -92,7 +92,7 @@ export const GridCards = () => {
 
                 {/* 4. Anime/Manga Card (col-span-1) */}
                 <motion.a
-                    href="https://myanimelist.net/profile/hazyDev4live"
+                    href="https://anilist.co/user/hazyDev4live/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="col-span-1 flex flex-col relative group overflow-hidden rounded-3xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl min-h-[220px] border border-white/10 hover:border-[#E0AFA0]/50 transition-colors cursor-pointer"
