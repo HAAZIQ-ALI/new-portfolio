@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
-import { Lexend_Deca, Stack_Sans_Notch, M_PLUS_Rounded_1c, SUSE_Mono, } from 'next/font/google'; 
+import {
+  Lexend_Deca,
+  Stack_Sans_Notch,
+  M_PLUS_Rounded_1c,
+  SUSE_Mono,
+} from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -10,15 +15,18 @@ import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Haaziq Ali | 15 Year Old Developer & Builder",
-  description: "Portfolio of Haaziq Ali - 15 year old self-taught developer specializing in C++, systems programming, and web development. Based in India.",
-  keywords: "Haaziq Ali, H4ZY, developer, C++, Next.js, portfolio, 15 year old developer, India, teen dev, frontend developer",
-  metadataBase: new URL('https://karou.me'),
+  description:
+    "Portfolio of Haaziq Ali - 15 year old self-taught developer specializing in C++, systems programming, and web development. Based in India.",
+  keywords:
+    "Haaziq Ali, H4ZY, developer, C++, Next.js, portfolio, 15 year old developer, India, teen dev, frontend developer",
+  metadataBase: new URL("https://karou.me"),
   alternates: {
-    canonical: '/',
+    canonical: "/",
   },
   openGraph: {
     title: "Haaziq Ali | Developer & Learner",
-    description: "15 year old self-taught developer building with C++ and web technologies",
+    description:
+      "15 year old self-taught developer building with C++ and web technologies",
     url: "https://karou.me",
     siteName: "H4ZY Portfolio",
     images: [
@@ -34,16 +42,15 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Haaziq Ali | Developer & Learner",
-    description: "15 year old self-taught developer building with C++ and web technologies",
+    description:
+      "15 year old self-taught developer building with C++ and web technologies",
     images: ["https://avatars.githubusercontent.com/u/167455693?v=4"],
   },
 };
-const  lexend = Lexend_Deca({
+const lexend = Lexend_Deca({
+  variable: "--font-lexend",
 
-variable: "--font-lexend",
-
-subsets: ["latin"],
-
+  subsets: ["latin"],
 });
 
 const mplus = M_PLUS_Rounded_1c({
@@ -51,8 +58,6 @@ const mplus = M_PLUS_Rounded_1c({
   subsets: ["latin"],
   weight: ["400", "700"],
 });
-
-
 
 const stack = Stack_Sans_Notch({
   variable: "--font-stack",
@@ -65,9 +70,6 @@ const suse = SUSE_Mono({
   subsets: ["latin"],
   adjustFontFallback: false,
 });
-
-
-
 
 export default function RootLayout({
   children,
@@ -86,6 +88,7 @@ export default function RootLayout({
           <Footer />
         </WelcomeLoader>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
