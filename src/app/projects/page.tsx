@@ -12,7 +12,7 @@ export default function Projects() {
               Project 1
             </h2>
             <p className="font-lexend text-[#98c1d9] text-sm">
-              Description of your awesome project goes here.
+              Description 
             </p>
           </div>
         </div>

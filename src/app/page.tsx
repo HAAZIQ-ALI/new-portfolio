@@ -6,9 +6,7 @@ import { GridCards } from "@/components/grids";
 export default function Home() {
   return (
     <section className="bg-[#1B262C] w-full min-h-screen flex">
-      <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]">
-        <div className="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#C9EBFF,transparent)]"></div>
-      </div>
+    
       <div className="mt-24 max-w-5xl mx-auto w-full px-6 py-4 pb-20 flex flex-col">
         
         {/* Name - 0.4s delay */}
@@ -38,7 +36,7 @@ export default function Home() {
           animate={{ opacity: 0.9, y: 0 }}
           transition={{ duration: 0.6, delay: 4 }}
         >  
-          I build awesome stuff with my cs skills, explore, and think deeply about code, philosophy, and how things work <span className="text-[#98c1d9]">!! </span>
+          I build stuff that will helps me or solve problems with my skills, explore, and think deeply about code, philosophy, and how things work <span className="text-[#98c1d9]">!! </span>
         </motion.h1>
         
         <motion.h1 
