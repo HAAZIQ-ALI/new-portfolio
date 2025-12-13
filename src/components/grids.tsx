@@ -1,11 +1,11 @@
 "use client";
-import writing from "./assets/writing.jpeg"
-import anime from "./assets/vinland.jpeg"
+import writing from "./assets/writing.webp"
+import anime from "./assets/vinland.webp"
 import Image from "next/image";
-import gitCat from "./assets/gitCat.png";
-import goat from "./assets/dostovesky.jpeg"
+import gitCat from "./assets/gitCat.webp";
+import goat from "./assets/dostovesky.webp"
 import { motion } from "framer-motion";
-import quote from "./assets/tree.jpeg"
+import quote from "./assets/tree.webp"
 export const GridCards = () => {
     return (
         <div className="w-full">
