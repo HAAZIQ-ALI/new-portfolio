@@ -1,33 +1,33 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const themes = [
-  // Theme 1: Cool Haze (Original) - Calm Blue/Teal
+  // Theme 1: Hero Blue Harmony - Matches #6BB5C7 and #A8D5E2
   {
-    gradient: "bg-[linear-gradient(90deg,#98C1D9_0%,#4682A9_50%,#3D99A2_100%)]",
-    shadow: "shadow-[0_0_3px_#98C1D9,0_0_10px_#4682A9,0_0_20px_rgba(70,130,169,0.5)]",
+    gradient: "bg-[linear-gradient(90deg,#6BB5C7_0%,#A8D5E2_50%,#98C1D9_100%)]",
+    shadow: "shadow-[0_0_3px_#A8D5E2,0_0_10px_#6BB5C7,0_0_20px_rgba(168,213,226,0.5)]",
   },
-  // Theme 2: Electric Violet - Blue to Purple
+  // Theme 2: Subtle Green Accent - Matches #B5CCA3 with blue tones
   {
-    gradient: "bg-[linear-gradient(90deg,#4776E6_0%,#8E54E9_100%)]",
-    shadow: "shadow-[0_0_3px_#8E54E9,0_0_10px_#4776E6,0_0_20px_rgba(142,84,233,0.5)]",
+    gradient: "bg-[linear-gradient(90deg,#B5CCA3_0%,#A8D5E2_50%,#6BB5C7_100%)]",
+    shadow: "shadow-[0_0_3px_#B5CCA3,0_0_10px_#A8D5E2,0_0_20px_rgba(181,204,163,0.5)]",
   },
-  // Theme 3: Cyan Punch - Bright Cyan to Blue
+  // Theme 3: Cyan Flow - Bright cyan echoing hero's light blues
   {
-    gradient: "bg-[linear-gradient(90deg,#00d2ff_0%,#3a7bd5_100%)]",
-    shadow: "shadow-[0_0_3px_#00d2ff,0_0_10px_#3a7bd5,0_0_20px_rgba(0,210,255,0.5)]",
+    gradient: "bg-[linear-gradient(90deg,#00d2ff_0%,#A8D5E2_100%)]",
+    shadow: "shadow-[0_0_3px_#00d2ff,0_0_10px_#A8D5E2,0_0_20px_rgba(0,210,255,0.5)]",
   },
-  // Theme 4: Lush Green - Nature vibes
+  // Theme 4: Lush Harmony - Green with hero blue undertones
   {
-    gradient: "bg-[linear-gradient(90deg,#11998e_0%,#38ef7d_100%)]",
-    shadow: "shadow-[0_0_3px_#38ef7d,0_0_10px_#11998e,0_0_20px_rgba(56,239,125,0.5)]",
+    gradient: "bg-[linear-gradient(90deg,#11998e_0%,#B5CCA3_50%,#A8D5E2_100%)]",
+    shadow: "shadow-[0_0_3px_#B5CCA3,0_0_10px_#11998e,0_0_20px_rgba(181,204,163,0.5)]",
   },
-  // Theme 5: Midnight Mystery - Dark Blue/Purple
+  // Theme 5: Deep Teal Mystery - Darker tones suiting hero's dark bg
   {
-    gradient: "bg-[linear-gradient(90deg,#2b5876_0%,#4e4376_100%)]",
-    shadow: "shadow-[0_0_3px_#4e4376,0_0_10px_#2b5876,0_0_20px_rgba(78,67,118,0.5)]",
+    gradient: "bg-[linear-gradient(90deg,#2b5876_0%,#6BB5C7_100%)]",
+    shadow: "shadow-[0_0_3px_#6BB5C7,0_0_10px_#2b5876,0_0_20px_rgba(107,181,199,0.5)]",
   },
 ];
 
@@ -38,14 +38,19 @@ export default function Header() {
     setThemeIndex((prev) => (prev + 1) % themes.length);
   };
 
+  useEffect(() => {
+    const interval = setInterval(cycleTheme, 4000); // Auto-cycle every 4 seconds for smooth hero overlay
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <header className="fixed top-0 w-full bg-[#1B262C]/80 backdrop-blur-sm z-50">
+    <header className="fixed top-0 w-full bg-[#1B262C]/80 backdrop-blur-sm z-50" suppressHydrationWarning>
       <nav className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="font-mplus font-bold text-xl text-[#e0fbfc]">
+        <Link href="/" className="font-ibm font-bold text-xl text-[#e0fbfc]">
           H4ZY 
         </Link>
         <ul className="flex items-center gap-6 font-lexend text-sm">
-          <li>
+          <li className="list-none">
             <Link 
               href="/" 
               className="text-[#98c1d9] hover:text-[#e0fbfc] transition-colors"
@@ -54,7 +59,7 @@ export default function Header() {
               Home
             </Link>
           </li>
-          <li>
+          <li className="list-none">
             <Link 
               href="/about" 
               className="text-[#98c1d9] hover:text-[#e0fbfc] transition-colors"
@@ -63,7 +68,7 @@ export default function Header() {
               About
             </Link>
           </li>
-          <li>
+          <li className="list-none">
             <Link 
               href="/projects" 
               className="text-[#98c1d9] hover:text-[#e0fbfc] transition-colors"
@@ -72,7 +77,7 @@ export default function Header() {
               Projects
             </Link>
           </li>
-          <li>
+          <li className="list-none">
             <Link 
               href="/contact" 
               className="text-[#98c1d9] hover:text-[#e0fbfc] transition-colors"
@@ -83,7 +88,36 @@ export default function Header() {
           </li>
         </ul>
       </nav>
-      <div className={`h-[2px] w-full ${themes[themeIndex].gradient} ${themes[themeIndex].shadow} transition-all duration-500`}></div>
+      
+      {/* The "thinking" border - animated pulse + glow */}
+      <div 
+        className={`
+          h-[2px] 
+          w-full 
+          ${themes[themeIndex].gradient} 
+          ${themes[themeIndex].shadow} 
+          transition-all 
+          duration-700
+          ease-in-out
+          animate-[pulse_2s_ease-in-out_infinite]
+        `}
+        style={{
+          animation: 'thinking 3s ease-in-out infinite',
+        }}
+      />
+      
+      <style jsx>{`
+        @keyframes thinking {
+          0%, 100% {
+            opacity: 1;
+            filter: brightness(1) blur(0px);
+          }
+          50% {
+            opacity: 0.7;
+            filter: brightness(1.3) blur(1px);
+          }
+        }
+      `}</style>
     </header>
   );
 }

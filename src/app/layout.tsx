@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import {
   Lexend_Deca,
   Stack_Sans_Notch,
-  M_PLUS_Rounded_1c,
-  SUSE_Mono,
+  IBM_Plex_Mono
 } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -53,11 +52,7 @@ const lexend = Lexend_Deca({
   subsets: ["latin"],
 });
 
-const mplus = M_PLUS_Rounded_1c({
-  variable: "--font-mplus",
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
+
 
 const stack = Stack_Sans_Notch({
   variable: "--font-stack",
@@ -65,11 +60,12 @@ const stack = Stack_Sans_Notch({
   adjustFontFallback: false,
 });
 
-const suse = SUSE_Mono({
-  variable: "--font-suse",
-  subsets: ["latin"],
-  adjustFontFallback: false,
+const ibm = IBM_Plex_Mono({
+  variable: "--font-ibm",
+  weight: "400",
+  subsets:["latin"]
 });
+
 
 export default function RootLayout({
   children,
@@ -79,7 +75,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${lexend.variable} ${stack.variable} ${mplus.variable} ${suse.variable}  antialiased`}
+        className={`${lexend.variable} ${stack.variable}  ${ibm.variable}  antialiased`}
       >
         <JsonLd />
         <WelcomeLoader>

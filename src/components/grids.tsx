@@ -225,7 +225,7 @@ export const GridCards = () => {
                         <path d="M10,7L8,11H11V17H5V11L7,7H10M18,7L16,11H19V17H13V11L15,7H18Z" />
                     </svg>
                     <blockquote className="relative z-10 text-center">
-                        <p className="text-lg md:text-xl font-extrabold font-mplus text-white/90 italic mb-4 leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+                        <p className="text-lg md:text-xl font-extrabold font-ibm text-white/90 italic mb-4 leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
                             "
                             Every saint has a past, <br /> every sinner has a future "
                         </p>
